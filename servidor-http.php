@@ -5,6 +5,7 @@ use Swoole\Http\Response;
 use Swoole\Http\Server;
 
 $servidor = new Server('localhost','8080');
+$servidor->set(['hook_flags' => SWOOLE_HOOK_ALL]);
 
 $servidor->on('request', function (Request $requesicao, Response $resposta){
     $resultado = [];
